@@ -23,3 +23,15 @@ body {
   position: absolute;
   animation: runner 6s linear infinite;
 }
+
+/* Para perspectiva */
+.perspective {
+  perspective: 1000px;
+}
+
+/* Card 3D */
+.tilt-card {
+  transform: perspective(1000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+  transition: transform 0.2s ease-out;
+  will-change: transform; /* GPU */
+}
