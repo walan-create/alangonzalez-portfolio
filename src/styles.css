@@ -10,3 +10,16 @@
 body {
   font-family: 'Onest Variable', sans-serif;
 }
+
+@keyframes runner {
+  0%   { top: 0;    left: 0;    transform: translate(0, -50%); }     /* esquina superior izq */
+  25%  { top: 0;    left: 100%; transform: translate(-50%, -50%);}   /* esquina sup der */
+  50%  { top: 100%; left: 100%; transform: translate(-50%, -50%);}   /* esquina inf der */
+  75%  { top: 100%; left: 0;    transform: translate(-50%, -50%);}   /* esquina inf izq */
+  100% { top: 0;    left: 0;    transform: translate(0, -50%);}      /* vuelve al inicio */
+}
+
+.animate-runner {
+  position: absolute;
+  animation: runner 6s linear infinite;
+}
