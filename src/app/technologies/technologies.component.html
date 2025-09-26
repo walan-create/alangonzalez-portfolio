@@ -18,11 +18,14 @@
 </section> -->
 <!-- ! CAJA CON TECNOLOGÍAS -->
 <section class="grid lg:grid-cols-2 gap-6 lg:place-content-center auto-rows-auto">
-  
+
+
     <!-- Frontend Card -->
     <article
-      class="relative outline rounded-2xl p-6 pb-8 shadow-lg overflow-hidden group transition duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]"
-    >
+      class="tilt-card relative outline rounded-2xl p-6 pb-8 shadow-lg overflow-hidden group transition duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+      (mousemove)="tiltCard($event)"
+      (mouseleave)="resetTilt($event)"
+      >
       <!-- Borde -->
       <span class="absolute inset-0 rounded-2xl p-[2px] opacity-0 group-hover:opacity-90 transition-opacity duration-500 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-borderGlow pointer-events-none z-0"></span>
       <!-- fondo interior para que no tape el glow -->
@@ -110,13 +113,15 @@
 
       </ul>
       </div>
-      
+
     </article>
 
     <!-- Backend card -->
     <article
-      class="relative outline rounded-2xl p-6 pb-8 shadow-lg overflow-hidden group transition duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.6)]"
-    >
+      class="tilt-card relative outline rounded-2xl p-6 pb-8 shadow-lg overflow-hidden group transition duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.6)]"
+      (mousemove)="tiltCard($event)"
+      (mouseleave)="resetTilt($event)"
+      >
       <!-- Borde -->
       <span class="absolute inset-0 rounded-2xl p-[2px] opacity-0 group-hover:opacity-90 transition-opacity duration-500 bg-gradient-to-r from-green-400 via-teal-400 to-cyan-700 animate-borderGlow pointer-events-none z-0"></span>
       <!-- fondo interior para que no tape el glow -->
@@ -149,6 +154,11 @@
           <span class="text-sm w-full text-center">NodeJS</span>
         </li>
         <li class="rounded-2xl group flex flex-col justify-center items-center">
+          <!-- Express icon -->
+          <img src="assets/images/express-logo.png" alt="Logo de express" class="size-12 mb-2" />
+          <span class="text-sm w-full text-center">Express</span>
+        </li>
+        <li class="rounded-2xl group flex flex-col justify-center items-center">
           <!-- MongoDB icon -->
           <img src="assets/images/mongodb-logo.png" alt="Logo de JUnit" class="size-12 mb-2" />
           <span class="text-sm w-full text-center">MongoDB</span>
@@ -171,13 +181,15 @@
 
       </ul>
       </div>
-      
+
     </article>
 
     <!-- Tools card -->
     <article
-      class="relative outline rounded-2xl p-6 pb-8 shadow-lg overflow-hidden group transition duration-300 hover:shadow-[0_0_30px_rgba(255,159,67,0.6)] lg:col-start-1 lg:col-end-3 "
-    >
+      class="tilt-card relative outline rounded-2xl p-6 pb-8 shadow-lg overflow-hidden group transition duration-300 hover:shadow-[0_0_30px_rgba(255,159,67,0.6)] lg:col-start-1 lg:col-end-3 "
+      (mousemove)="tiltCard($event)"
+      (mouseleave)="resetTilt($event)"
+      >
       <!-- Borde -->
       <span class="absolute inset-0 rounded-2xl p-[2px] opacity-0 group-hover:opacity-90 transition-opacity duration-500 bg-gradient-to-r from-orange-400 via-orange-500 to-pink-200 animate-borderGlow pointer-events-none z-0"></span>
       <!-- fondo interior para que no tape el glow -->
@@ -186,7 +198,7 @@
       <span class="absolute size-0 rounded-full opacity-0 group-hover:opacity-100 animate-runner shadow-[0_0_1000px_100px_rgba(255,159,67,0.6)] bg-gradient-to-r from-orange-400 via-orange-500 to-pink-500  pointer-events-none z-0"></span>
 
       <div class="relative z-10">
-       
+
           <h3
           class="text-center mb-8 text-xl font-bold lg:text-4xl lg:break-words bg-gradient-to-t from-[#ffb272] to-[#ee4a08] bg-clip-text text-transparent"
         >
@@ -242,7 +254,7 @@
 
         </ul>
       </div>
-      
+
     </article>
 
 </section>

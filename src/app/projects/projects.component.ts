@@ -6,7 +6,8 @@ import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angu
   templateUrl: './projects.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsComponent { 
+export class ProjectsComponent {
+
 tiltCard(event: MouseEvent) {
   const card = event.currentTarget as HTMLElement;
   const rect = card.getBoundingClientRect();
@@ -16,8 +17,8 @@ tiltCard(event: MouseEvent) {
   const centerX = rect.width / 2;
   const centerY = rect.height / 2;
 
-  const rotateX = ((y - centerY) / centerY) * -15; // negativo para efecto invertido
-  const rotateY = ((x - centerX) / centerX) * 15;
+  const rotateX = ((y - centerY) / centerY) * -5; // negativo para efecto invertido
+  const rotateY = ((x - centerX) / centerX) * 5;
 
   card.style.setProperty('--rotate-x', `${rotateX}deg`);
   card.style.setProperty('--rotate-y', `${rotateY}deg`);
