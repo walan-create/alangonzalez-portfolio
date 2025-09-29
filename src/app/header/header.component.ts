@@ -1,43 +1,31 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-  isDark = false;
+  currentSection: string = '';
+  sections: string[] = ['proyectos', 'tecnologias', 'sobre-mi'];
 
-  ngOnInit(): void {
-    const saved = localStorage.getItem('theme');
-    const mode =
-      saved === 'dark'
-        ? 'dark'
-        : saved === 'light'
-        ? 'light'
-        : window.matchMedia?.('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
+  ngOnInit(): void {}
 
-    this.applyTheme(mode as 'light' | 'dark');
-    this.isDark = mode === 'dark';
-  }
-
-  onToggleTheme(checked: boolean) {
-    const mode = checked ? 'dark' : 'light';
-    this.applyTheme(mode);
-    localStorage.setItem('theme', mode);
-  }
-
-  private applyTheme(mode: 'light' | 'dark') {
-    const html = document.documentElement;
-    if (mode === 'dark') {
-      html.classList.add('dark');
-      html.setAttribute('data-theme', 'dark');
-    } else {
-      html.classList.remove('dark');
-      html.setAttribute('data-theme', 'light');
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const y = event.clientY; // posición vertical del ratón
+    for (let i = this.sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(this.sections[i]);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (y >= rect.top && y <= rect.bottom) {
+          this.currentSection = this.sections[i];
+          break;
+        }
+      }
     }
   }
 }

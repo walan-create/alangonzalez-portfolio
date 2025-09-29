@@ -1,15 +1,26 @@
 <header class="fixed top-0 z-20 flex items-center justify-center w-full mx-auto mt-2">
   <nav class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center bg-gray-800">
-    <a class="relative block px-2 py-2 transition hover:text-blue-500" href="#proyectos">
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500"
+      [ngClass]="{'text-blue-500': currentSection === 'proyectos'}"
+      href="#proyectos">
       Proyectos
     </a>
-    <a class="relative block px-2 py-2 transition hover:text-blue-500" href="#tecnologias">
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500"
+      [ngClass]="{'text-blue-500': currentSection === 'tecnologias'}"
+      href="#tecnologias">
       Tecnologías
     </a>
-    <a class="relative block px-2 py-2 transition hover:text-blue-500 text-blue-500" href="#sobre-mi">
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500"
+      [ngClass]="{'text-blue-500': currentSection === 'sobre-mi'}"
+      href="#sobre-mi">
       Sobre mí
     </a>
-    <a class="relative block px-2 py-2 transition hover:text-blue-500 " href="mailto:alangonzalezmorales2003@gmail.com">
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500"
+      href="mailto:alangonzalezmorales2003@gmail.com">
       Contacto
     </a>
   </nav>
